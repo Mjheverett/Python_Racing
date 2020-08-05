@@ -73,4 +73,5 @@ mushmellow_kart = Mushmellow_kart()
 powerflower_kart = Powerflower_kart()
 drybomber_kart = Drybomber_kart()
 
-# print(standard_kart.stats())
+#print(standard_kart.stats())
+

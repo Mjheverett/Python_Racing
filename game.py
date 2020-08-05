@@ -118,4 +118,3 @@ def game_startmenu():
 def game(players_driver, players_kart, players_track):
     pass
 
-game_startmenu()

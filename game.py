@@ -25,7 +25,21 @@ kart_menu = [
     "standard_kart",
     "mushmellow_kart",
     "powerflower_kart",
-    "drybomber_kart",
+    "drybomber_kart"
+]
+
+driver_menu = [
+    "standard_kart",
+    "mushmellow_kart",
+    "powerflower_kart",
+    "drybomber_kart"
+]
+
+track_menu = [
+    "standard_kart",
+    "mushmellow_kart",
+    "powerflower_kart",
+    "drybomber_kart"
 ]
 
 def print_menu_error():
@@ -52,23 +66,47 @@ def get_user_choice(choice_list):
             print_menu_error()
     return choice
 
-def game_menu():
+def game_startmenu():
     while True:
         choice = get_user_choice(game_menu)
         if choice == 1:
-            driver_selection = get_user_choice(driver_menu)
+            choice = get_user_choice(driver_menu)
+            if choice == 1:
+                players_kart = Standard_kart()
+            if choice == 2:
+                players_kart = Mushmellow_kart()
+            if choice == 3:
+                players_kart = Powerflower_kart()
+            if choice == 4:
+                players_kart = Drybomber_kart()
         if choice == 2:
-            kart_selection = get_user_choice(kart_menu)
+            choice = get_user_choice(kart_menu)
+            if choice == 1:
+                players_kart = Standard_kart()
+            if choice == 2:
+                players_kart = Mushmellow_kart()
+            if choice == 3:
+                players_kart = Powerflower_kart()
+            if choice == 4:
+                players_kart = Drybomber_kart()
         if choice == 3:
-            track_selection = get_user_choice(track_menu)
+            choice = get_user_choice(track_menu)
+            if choice == 1:
+                players_kart = Track_1()
+            if choice == 2:
+                players_kart = Track_2()
+            if choice == 3:
+                players_kart = Track_3()
+            if choice == 4:
+                players_kart = Track_4()
         if choice == 4:
             print("""
             Your have selected:
             Driver: %s
             Kart: %s
-            Track: %s""" % (driver_selection, kart_selection, track_selection))
+            Track: %s""" % (players_driver.stats, players_kart.stats, players_track.stats))
         if choice == 5:
-            game(driver_selection, kart_selection, track_selection)
+            game(players_driver, players_kart, players_track)
         if choice == 6:
             exit_prompt = input("Are you sure you want to quit? All game data will be lost. (Y or N)").upper()
             if exit_prompt == "Y":
@@ -79,9 +117,7 @@ def game_menu():
                 print("That was not a valid choice. Try again.")
                 exit_prompt = input("Are you sure you want to quit? All game data will be lost. (Y or N)").upper()
 
-def game(driver_selection, kart_selection, track_selection):
+def game(players_driver, players_kart, players_track):
     pass
 
-print(drybomber_kart.stats())
-
-game_menu()
+game_startmenu()

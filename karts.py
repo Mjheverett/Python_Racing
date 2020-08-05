@@ -27,5 +27,5 @@ mushmellow_kart = Kart("Mushmellow", 4.3, 6.9, 6.9, 8.7)
 powerflower_kart = Kart("Powerflower", 6.7, 4.3, 9, 6.6)
 drybomber_kart = Kart("Dry Bomber", 3.4, 9.8, 3.9, 9.5)
 
-print(drybomber_kart.stats())
+# print(drybomber_kart.stats())
 

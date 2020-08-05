@@ -41,4 +41,4 @@ driver_2 = Driver_2()
 driver_3 = Driver_3()
 driver_4 = Driver_4()
 
-print(driver_1.stats())
+#print(driver_1.stats())

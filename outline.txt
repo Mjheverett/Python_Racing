@@ -22,30 +22,20 @@ Schedule
     Monday Morning - Test/Rinse/Repeat
     Monday Afternoon - Presentation
 
-If Interested:
 
-Some of Chris' previous students have done 2D video games. Recently he had some students enjoy using this library: https://pyglet.readthedocs.io/en/latest/
+Text based racing game:
 
-
-Seans best: group never played dnd, sports guys. Created football game. do you wanna pass, run the ball. run too many you can fumble. if too far to pass may get intercepted. play as quarterback. other team can intercept and score.
-
-
-Text based racing game?
 drivers have various stats. (experience, racecraft, awareness, pace)
     Experience – A higher experience score will help players collect a greater number of ‘Resource Points’, used in the game to buy car upgrades.
 
-    Racecraft – A higher racecraft score allow the driver to unleash more effective overtakes.
+    Sneakiness – A higher racecraft score allow the driver to unleash more effective overtakes.
 
-    Awareness – A higher score here will mean the driver is less likely to lose control of their car when the going gets tough.
+    Crashiness – A higher score here will mean the driver is less likely to lose control of their car when the going gets tough.
 
-    Pace – Quite simply, the higher the pace score, the more rapid a driver will be throughout a race.
+    Speed – Quite simply, the higher the pace score, the more rapid a driver will be throughout a race.
+
+
 bonuses at various tracks based on their speeds or cornering
-select your team
-select your teammate
-win points per race for self
-win points per race for team, good teammate helps,
-
-lose status by losing race or coming after teammate
 
 lap by lap selection of keep racing, pit for tires
 
@@ -53,3 +43,28 @@ chance of crashes, safety car means no passing
 passing happens; per lap calculations and printing of current places
 
 score poorly could result in getting fired
+
+
+Pre-coding:
+
+Classes: Drivers(Experience, Sneakiness, Recklessness), Karts(Speed, Handling), Tracks(Difficulty, Weather, Speed_or_Handling)
+
+
+Phase 1:
+-Classes
+-Playthrough: laps, prompts, player choices
+-Overtake opponents
+
+Phase 2:
+-Additional tracks & drivers
+-Weather
+-Durability
+-Random events: 
+
+Phase 3:
+-Money: karts buying, repairs, upgrades
+-Teammates & teams
+-Points for season
+-Grand Prix
+
+https://www.google.com/search?q=ascii+art&rlz=1C5CHFA_enAE786AE786&oq=ascii&aqs=chrome.1.69i57j0l7.4229j0j7&sourceid=chrome&ie=UTF-8

@@ -24,3 +24,5 @@ class Track_3(Tracks):
 class Track_4(Tracks):
     def __init__(self, name = "Tsukuba", difficulty = 9, weather = 0, speed = 7, handeling = 4):
         super().__init__(name, difficulty, weather, speed, handeling)
+        
+#hi

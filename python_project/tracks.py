@@ -7,57 +7,20 @@ class Tracks:
         self.handeling = handeling
 
 class Track_1(Tracks):
-    def __init__(self, name, difficulty, weather, speed, handeling):
+    def __init__(self, name = "Suzuka", difficulty = 3, weather = 0, speed = 8, handeling = 8):
         super().__init__(name, difficulty, weather, speed, handeling)
-    def stats(self):
-        return """
-        %s:
-        Difficulty: %d
-        Weather: %d
-        Speed: %d
-        Handeling: %d
-        """ % (self.name, self.difficulty, self.weather, self.speed, self.handeling)
 
 
 class Track_2(Tracks):
-    def __init__(self, name, difficulty, weather, speed, handeling):
+    def __init__(self, name = "Fuji", difficulty = 5, weather = 8, speed = 4, handeling = 3):
         super().__init__(name, difficulty, weather, speed, handeling)
-    def stats(self):
-        return """
-        %s:
-        Difficulty: %d
-        Weather: %d
-        Speed: %d
-        Handeling: %d
-        """ % (self.name, self.difficulty, self.weather, self.speed, self.handeling)
 
 
 class Track_3(Tracks):
-    def __init__(self, name, difficulty, weather, speed, handeling):
+    def __init__(self, name = "Inagawa", difficulty = 8, weather = 5, speed = 3, handeling = 5):
         super().__init__(name, difficulty, weather, speed, handeling)
-    def stats(self):
-        return """
-        %s:
-        Difficulty: %d
-        Weather: %d
-        Speed: %d
-        Handeling: %d
-        """ % (self.name, self.difficulty, self.weather, self.speed, self.handeling)
 
 
 class Track_4(Tracks):
-    def __init__(self, name, difficulty, weather, speed, handeling):
+    def __init__(self, name = "Tsukuba", difficulty = 9, weather = 0, speed = 7, handeling = 4):
         super().__init__(name, difficulty, weather, speed, handeling)
-    def stats(self):
-        return """
-        %s:
-        Difficulty: %d
-        Weather: %d
-        Speed: %d
-        Handeling: %d
-        """ % (self.name, self.difficulty, self.weather, self.speed, self.handeling)
-
-suzuka = Track_1(Suzuka, 3, 2, 8, 8)
-fuji = Track_2(Fuji, 5, 8, 4, 3)
-Inagawa = Track_3(Inagawa, 8, 5, 3, 5)
-tsukuba = Track_4(Tsukuba, 9, 5, 7, 4)

@@ -68,3 +68,15 @@ Phase 3:
 -Grand Prix
 
 https://www.google.com/search?q=ascii+art&rlz=1C5CHFA_enAE786AE786&oq=ascii&aqs=chrome.1.69i57j0l7.4229j0j7&sourceid=chrome&ie=UTF-8
+
+
+IDEAS FOR DRIVERS AND ATTRIBUTES
+
+DRIVERS
+
+Attributes: Speed, Knowledge , Alertness, Patience , Mechanical skills 
+
+Driver 1: Experienced // Speed +-, Knowledge ++, Alertness +-, Patience +-, Mechanical skills ++
+Driver 2: Crafty // Speed --, Knowledge ++, Alertness ++, Patience ++, Mechanical skills +-
+Driver 3: Reckless // Speed ++, Knowledge --, Alertness +-, Patience +- , Mechanical skills +- 
+Driver 4: ???

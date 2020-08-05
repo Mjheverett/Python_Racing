@@ -1,7 +1,7 @@
 # Python Project for Team Discovery Channel: Matthew Everett, Kevin Jeffers, Tait Loughridge, Katy Sage
 #
 # from drivers import Drivers
-# from karts import Karts
+from karts import Kart
 # from tracks import Tracks
 
 print("""
@@ -19,6 +19,13 @@ game_menu = [
     "View your selections",
     "RACE!!!",
     "Exit"
+]
+
+kart_menu = [
+    "standard_kart",
+    "mushmellow_kart",
+    "powerflower_kart",
+    "drybomber_kart",
 ]
 
 def print_menu_error():
@@ -45,7 +52,7 @@ def get_user_choice(choice_list):
             print_menu_error()
     return choice
 
-def game():
+def game_menu():
     while True:
         choice = get_user_choice(game_menu)
         if choice == 1:
@@ -71,5 +78,10 @@ def game():
             else:
                 print("That was not a valid choice. Try again.")
                 exit_prompt = input("Are you sure you want to quit? All game data will be lost. (Y or N)").upper()
+
+def game(driver_selection, kart_selection, track_selection):
+    pass
+
+print(drybomber_kart.stats())
 
 game_menu()

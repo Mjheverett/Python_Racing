@@ -8,6 +8,16 @@ class Driver:
         self.patience = patience
         self.mechanical_skills = mechanical_skills
 
+    def stats(self):
+        return """
+        %s:
+        Speed: %.1f
+        Knowledge: %.1f
+        Alertness: %.1f
+        Patience: %.1f
+        Mechanical: %.1f
+        """ % (self.name.upper(), self.speed, self.knowledge, self.alertness, self.patience, self.mechanical_skills)
+
 #Driver subclasses
 class Driver_1(Driver):
     def __init__(self, name = "Veteran", speed = 5, knowledge = 10, alertness = 5, patience = 5, mechanical_skills = 10):
@@ -26,7 +36,9 @@ class Driver_4(Driver):
         super().__init__(name, speed, knowledge, alertness, patience, mechanical_skills)
 
 #Class Instantiation
-# Driver_1 = Driver("Veteran", 5, 10, 5, 5, 10)
-# Driver_2 = Driver("Crafty", 0, 10, 10, 10, 5)
-# Driver_3 = Driver("Cavalier", 10, 0, 5, 5, 5)
-# Driver_4 = Driver("Joe", 5, 5, 5, 5, 5)
+driver_1 = Driver_1()
+driver_2 = Driver_2()
+driver_3 = Driver_3()
+driver_4 = Driver_4()
+
+print(driver_1.stats())

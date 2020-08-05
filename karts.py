@@ -1,5 +1,5 @@
 class Kart:
-    def __init__(self, name, speed, handling, drift, acceleration, wear = 10):
+    def __init__(self, name, speed, handling, drift, acceleration, wear = 0):
         self.name = name
         self.speed = speed
         self.handling = handling
@@ -23,33 +23,33 @@ class Kart:
     #also indicates the rate of speed recovery after the kart is stopped or slowed
 #below this line is commented-out damage methods 
     """ def spin_out(self, wear):
-        wear -= 1
+        wear += 1
         return ("You've spun-out. \n Your kart has suffered an additional 1 wear. \n Your kart is now at %.1f out of 10 wear." % (self.wear))
-        if wear <= 0:
+        if wear >= 10:
             return("Your kart is beat to hell. There is no way you can continue the race. Play again?")
             #enter a loop to restart the game here
     def tire_wear(self, wear):
-        wear -= 1.5
+        wear += 1.5
         return ("You've caused increased wear on your tires. \n Your kart has suffered an additional 1.5 wear. \n Your kart is now at %.1f out of 10 wear." % (self.wear))
-        if wear <= 0:
+        if wear >= 10:
             return("Your kart is beat to hell. There is no way you can continue the race. Play again?")
             #enter a loop to restart the game here
     def crash_into_wall(self, wear):
-        wear -= 8
+        wear += 8
         return ("You have crashed into a wall. \n Your kart has suffered an additional 8 damage. \n Your kart is now at %.1f out of 10 wear." % (self.wear))
-        if wear <= 0:
+        if wear >= 10:
             return("Your kart is beat to hell. There is no way you can continue the race. Play again?")
             #enter a loop to restart the game here
     def bump_into_opponent(self, wear):
-        wear -= 2.5 
+        wear += 2.5 
         return ("You have bumped into an opponent's kart. \n Your kart has suffered an additional 2.5 damage. \n Your kart is now at %.1f out of 10 wear." % (self.wear))
-        if wear <= 0:
+        if wear >= 10:
             return("Your kart is beat to hell. There is no way you can continue the race. Play again?")
             #enter a loop to restart the game here
     def blown_engine(self, wear):
-        wear -= 10
+        wear += 10
         return("You have blown an engine! \n Your kart has suffered an additional 10 damage. \n Your kart is now at %.1f out of 10 wear." % (self.wear))
-        if wear <= 0:
+        if wear >= 10:
             return("Your kart is beat to hell. There is no way you can continue the race. Play again?")
             #enter a loop to restart the game here """
 

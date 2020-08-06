@@ -66,12 +66,3 @@ class Powerflower_kart(Kart):
 class Drybomber_kart(Kart):
     def __init__(self, name = "Dry Bomber", speed = 3.4, handling = 9.8, drift = 3.9, acceleration = 9.5):
         super().__init__(name, speed, handling, drift, acceleration)
-
-#I don't know if we need to instantialize or not, but here they are if we do
-# standard_kart = Standard_kart()
-# mushmellow_kart = Mushmellow_kart()
-# powerflower_kart = Powerflower_kart()
-# drybomber_kart = Drybomber_kart()
-
-#print(standard_kart.stats())
-

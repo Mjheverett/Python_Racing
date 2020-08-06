@@ -7,6 +7,12 @@ from tracks import Track_1, Track_2, Track_3, Track_4
 print("""
 Welcome to Definitely NOT Mario Kart
 
+  ___
+    _-_-  _/\______\\__
+ _-_-__  / ,-. -|-  ,-.`-.
+    _-_- `( o )----( o )-'
+           `-'      `-'
+
 A text based racing game.
 
 Choose your driver and get racing!
@@ -119,12 +125,21 @@ def game_startmenu():
 
 # GAME AND GAME FUNCTIONS BELOW HERE---------------------------------------------------------------
 
+def print_player_ranks(choice_list):
+    choice_string = ""
+    num = 1
+    for choice in choice_list:
+        choice_string += "%d: %s\n" % (num, choice)
+        num += 1
+    choice_string += "Please choose an option: "
+    return choice_string
+
 def set_starting_line(players_driver, players_kart, players_track):
 
     #assign attributes to variables so the rest of this runs 
-    players_driver_name = players_driver.name
-    players_kart_name = players_kart.name
-    players_track = players_track.name
+    players_driver_name = "Veteran" #players_driver.name
+    players_kart_name = "Mushmellow" #players_kart.name
+    players_track = "Fuji" #players_track.name
 
     #lists all drivers and karts
     all_drivers = ["Veteran","Crafty","Cavalier","Joe"]
@@ -149,18 +164,32 @@ def set_starting_line(players_driver, players_kart, players_track):
     #groups the player and computers 1-3 into dictionaries
     players = {
         "player": {
-            players_driver_name: players_kart_name
+            players_kart_name: players_driver_name
         },
         "computer_1": {
-            remaining_drivers[0]: remaining_karts[0]
+            remaining_karts[0]: remaining_drivers[0]
         }, 
         "computer_2": {
-            remaining_drivers[1]: remaining_karts[1]
+            remaining_karts[1]: remaining_drivers[1]
         },
         "computer_3": {
-            remaining_drivers[2]: remaining_karts[2]
+            remaining_karts[2]: remaining_drivers[2]
         }}
-        
+    
+    print("Starting Order:")
+    starting_order = ["","","",""]
+    for i in players:
+        for j in players[i]:
+            if j == "Dry Bomber":
+                starting_order[0] = players[i][j]
+            if j == "Mushmellow":
+                starting_order[1] = players[i][j]
+            if j == "Powerflower":
+                starting_order[2] = players[i][j]
+            if j == "Standard":
+                starting_order[3] = players[i][j]
+    print_player_ranks(starting_order)
+
     #prints the players dictionary nicely 
     def print_nested(val, nesting = -5): 
         if type(val) == dict: 
@@ -172,9 +201,9 @@ def set_starting_line(players_driver, players_kart, players_track):
                 print_nested(val[k],nesting) 
         else: 
             print(val) 
-    return print_nested(players)
+    return print_nested(players),players
 
-def lap_events(laps):
+def lap_events(laps,players):
     print("Lap %d!!" % laps)
 
 def finish_line():

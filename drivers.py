@@ -36,9 +36,9 @@ class Driver_4(Driver):
         super().__init__(name, speed, knowledge, alertness, patience, mechanical_skills)
 
 #Class Instantiation
-driver_1 = Driver_1()
-driver_2 = Driver_2()
-driver_3 = Driver_3()
-driver_4 = Driver_4()
+# driver_1 = Driver_1()
+# driver_2 = Driver_2()
+# driver_3 = Driver_3()
+# driver_4 = Driver_4()
 
 #print(driver_1.stats())

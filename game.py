@@ -1,8 +1,8 @@
 # Python Project for Team Discovery Channel: Matthew Everett, Kevin Jeffers, Tait Loughridge, Katy Sage
 #
 from drivers import Driver_1, Driver_2, Driver_3, Driver_4
-from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart
-from tracks import Track_1, Track_2, Track_3, Track_4
+from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart, Kart
+from tracks import Track_1, Track_2, Track_3, Track_4, Tracks
 import track_events
 import attributes
 

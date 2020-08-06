@@ -59,11 +59,11 @@ def track_1_turn_agg(probability):
     return change_in_places
 
 def track_1_turn_pass(probability):
-    if 1 <= probability <= 2:
+    if 1 <= probability <= 4:
         change_in_places = -1
-    if 3 <= probability <= 12:
+    if 5 <= probability <= 14:
         change_in_places = 0
-    if 13 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -118,6 +118,7 @@ def track_1_straight_agg(probability):
     if 13 <= probability <= 20:
         change_in_places = +1
 
+#Bad_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -164,11 +165,11 @@ def track_1_straight_agg(probability):
     return change_in_places
 
 def track_1_straight_pass(probability):
-    if 1 <= probability <= 2:
+    if 1 <= probability <= 4:
         change_in_places = -1
-    if 3 <= probability <= 12:
+    if 5 <= probability <= 14:
         change_in_places = 0
-    if 13 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -217,9 +218,9 @@ def track_1_straight_pass(probability):
 
 
 def track_1_in_first(probability):
-    if 1 <= probability <= 2:
+    if 1 <= probability <= 4:
         change_in_places = -1
-    if 3 <= probability <= 20:
+    if 5 <= probability <= 20:
         change_in_places = 0
 #Bad_event
     if probability == 1:
@@ -269,9 +270,9 @@ def track_1_in_first(probability):
 ##Track 2##---------------------------------------------------------------
 
 def track_2_turn_agg(probability):
-    if 1 <= probability <= 4:
+    if 1 <= probability <= 6:
         change_in_places = -1
-    if 5 <= probability <= 12:
+    if 7 <= probability <= 12:
         change_in_places = 0
     if 13 <= probability <= 20:
         change_in_places = +1
@@ -321,11 +322,11 @@ def track_2_turn_agg(probability):
     return change_in_places
 
 def track_2_turn_pass(probability):
-    if 1 <= probability <= 4:
+    if 1 <= probability <= 6:
         change_in_places = -1
-    if 5 <= probability <= 12:
+    if 7 <= probability <= 14:
         change_in_places = 0
-    if 13 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -373,13 +374,14 @@ def track_2_turn_pass(probability):
     return change_in_places
 
 def track_2_straight_agg(probability):
-    if 1 <= probability <= 4:
+    if 1 <= probability <= 6:
         change_in_places = -1
-    if 5 <= probability <= 12:
+    if 7 <= probability <= 12:
         change_in_places = 0
     if 13 <= probability <= 20:
         change_in_places = +1
 
+#Bad_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -426,11 +428,11 @@ def track_2_straight_agg(probability):
     return change_in_places
 
 def track_2_straight_pass(probability):
-    if 1 <= probability <= 4:
+    if 1 <= probability <= 6:
         change_in_places = -1
-    if 5 <= probability <= 12:
+    if 7 <= probability <= 14:
         change_in_places = 0
-    if 13 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -481,11 +483,9 @@ def track_2_straight_pass(probability):
 def track_2_in_first(probability):
     if 1 <= probability <= 6:
         change_in_places = -1
-    if 7 <= probability <= 12:
-        change_in_places = 0
-    if 13 <= probability <= 20:
-        change_in_places = +1
-#Catastrophic_event
+    if 7 <= probability <= 20:
+        change_in_places = +0
+#Bad_event
     if probability == 1:
         print("lost two spots")
     elif probability == 2:
@@ -534,15 +534,15 @@ def track_2_in_first(probability):
 ##Track 3##---------------------------------------------------------------
 
 def track_3_turn_agg(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 3:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 4 <= probability <= 8:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 9 <= probability <= 14:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
-#Bad_event
+#Catastrophic_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -588,15 +588,15 @@ def track_3_turn_agg(probability):
     return change_in_places
 
 def track_3_turn_pass(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 3:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 4 <= probability <= 6:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 7 <= probability <= 14:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
-#Bad_event
+#Catastrophic_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -642,15 +642,16 @@ def track_3_turn_pass(probability):
     return change_in_places
 
 def track_3_straight_agg(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 3:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 4 <= probability <= 8:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 9 <= probability <= 14:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
 
+#Catastrophic_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -697,15 +698,16 @@ def track_3_straight_agg(probability):
     return change_in_places
 
 def track_3_straight_pass(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 3:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 4 <= probability <= 6:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 7 <= probability <= 14:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 15 <= probability <= 20:
         change_in_places = +1
-#Bad_event
+
+#Catastrophic_event
     if probability == 1:
         print("")
     elif probability == 2:
@@ -752,14 +754,13 @@ def track_3_straight_pass(probability):
 
 
 def track_3_in_first(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 3:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 4 <= probability <= 6:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 7 <= probability <= 20:
         change_in_places = 0
-    if 16 <= probability <= 20:
-        change_in_places = +1
+
 #Catastrophic_event
     if probability == 1:
         print("lost two spots")
@@ -811,11 +812,11 @@ def track_3_in_first(probability):
 def track_4_turn_agg(probability):
     if 1 <= probability <= 5:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 6 <= probability <= 11:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 12 <= probability <= 17:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 18 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -863,13 +864,13 @@ def track_4_turn_agg(probability):
     return change_in_places
 
 def track_4_turn_pass(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 4:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 5 <= probability <= 8:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 9 <= probability <= 17:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 18 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -919,11 +920,11 @@ def track_4_turn_pass(probability):
 def track_4_straight_agg(probability):
     if 1 <= probability <= 5:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 6 <= probability <= 11:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 12 <= probability <= 17:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 18 <= probability <= 20:
         change_in_places = +1
 
     if probability == 1:
@@ -972,13 +973,13 @@ def track_4_straight_agg(probability):
     return change_in_places
 
 def track_4_straight_pass(probability):
-    if 1 <= probability <= 5:
+    if 1 <= probability <= 4:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 5 <= probability <= 8:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 9 <= probability <= 17:
         change_in_places = 0
-    if 16 <= probability <= 20:
+    if 18 <= probability <= 20:
         change_in_places = +1
 #Bad_event
     if probability == 1:
@@ -1029,12 +1030,10 @@ def track_4_straight_pass(probability):
 def track_4_in_first(probability):
     if 1 <= probability <= 5:
         change_in_places = -2
-    if 6 <= probability <= 10:
+    if 6 <= probability <= 11:
         change_in_places = -1
-    if 11 <= probability <= 15:
+    if 11 <= probability <= 20:
         change_in_places = 0
-    if 16 <= probability <= 20:
-        change_in_places = +1
 #Catastrophic_event
     if probability == 1:
         print("lost two spots")

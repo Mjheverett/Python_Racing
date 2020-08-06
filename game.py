@@ -3,6 +3,7 @@
 from drivers import Driver_1, Driver_2, Driver_3, Driver_4
 from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart, Kart
 from tracks import Track_1, Track_2, Track_3, Track_4, Tracks
+import players
 import track_events
 import attributes
 
@@ -195,25 +196,35 @@ def set_starting_line(players_driver, players_kart, players_track):
             print(val) 
     return players
 
-def lap_events(laps): # add back players to pass in
-    print("Lap %d!!" % laps)
+def lap_events(laps, players_track): # add back players to pass in
+    if laps == 3:
+            print("Final Lap!!!")
+    else:
+        print("Lap %d!!" % laps)
+    if players_track == "Suzuka":
+        track_1_game()
+    if players_track == "Fuji":
+        track_2_game()
+    if players_track == "Inagawa":
+        track_3_game()
+    if players_track == Tsukuba:
+        track_4_game()
 
 def finish_line():
     print("""
     FINISH!!
     """)
 
+# create functions for each track to order events
+# laps(tracks(track_events))
 def game(players_driver, players_kart, players_track):
     print("""
     Welcome to %s!! 
     """ % (players_track.name))
     set_starting_line(players_driver, players_kart, players_track)
     for laps in range(1, 4):
-        if laps == 3:
-            print("Final Lap!!!")
-            lap_events(laps)
-        else:
-            lap_events(laps)
+        lap_events(laps, players_track)
+
     finish_line()
 
 game_startmenu()

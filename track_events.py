@@ -43,7 +43,7 @@ neutral = {
     12: "You wanted to pass the kart in front of you, but thoughts of the work you needed to do at home distracted you. 'Did you leave the oven on?' You missed your chance to pass.",
     13: "As you race along the track, thoughts of programming in Python fill your mind. Now you're too 'mentally drained' to pass.",
     14: "In a test of your driving ability, you move to pass. Your kart starts to spin-out but you are able to get back control just in time not to lose your spot.",
-    15: "Fath No More steps on stage at the winner's circle and starts playing 'Epic'. Everyone is distracted...including you. You stay in your spot.",
+    15: "Faith No More steps on stage at the winner's circle and starts playing 'Epic'. Everyone is distracted...including you. You stay in your spot.",
 }
 
 good = {

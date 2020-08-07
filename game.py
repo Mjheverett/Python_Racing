@@ -128,7 +128,7 @@ def game(players_driver, players_kart, player1):
     print("""
     Welcome to Suzuka!! 
     """)
-    set_starting_line(players_driver, players_kart)
+    set_starting_line(players_driver, players_kart, player1)
     # set lap count based on user input
     lap_count = int(input("How many laps would you like to race? \n"))
     if lap_count == 0:
@@ -141,11 +141,13 @@ def game(players_driver, players_kart, player1):
     laps = 1
     while laps != (lap_count + 1):
         if laps == lap_count:
-            print("Final Lap!!!")
+            input("Ready for the next lap? <Enter to continue>\n")
+            print("Final Lap!!!\n")
             go_around_track(player1)
             laps += 1
         elif laps < lap_count:
-            print("Lap %d!!" % laps)
+            input("Ready for the lap? <Enter to continue>\n")
+            print("Lap %d!!\n" % laps)
             go_around_track(player1)
             laps += 1
         else:
@@ -156,18 +158,18 @@ def game(players_driver, players_kart, player1):
     if player1.rank == 1:
         print("Congrats! You WON!!")
     elif player1.rank == 2:
-        print("Second: Not great, not horrible")
+        print("Second: Not great, not horrible.")
     elif player1.rank == 3:
-        print("Third: try harder")
+        print("Third: try harder.")
     elif player1.rank == 4:
         print("Fourth ... oof.")
     set_finish_order()
 
-    play_again = input("Would you like to play again? (Y or N)").upper()
+    play_again = input("Would you like to play again? (Y or N) ").upper()
     if play_again == "Y":
         pass
     elif play_again == "N":
-        menu_choice = 5
+        quit()
     else:
         print("That was not a valid choice. Try again. ")
 

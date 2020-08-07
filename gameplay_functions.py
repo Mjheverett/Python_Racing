@@ -20,7 +20,7 @@ def print_player_ranks(choice_list):
         num += 1
     return choice_string
 
-def set_starting_line(players_driver, players_kart):
+def set_starting_line(players_driver, players_kart, player1):
     #assign attributes to variables so the rest of this runs 
     players_driver_name = players_driver.name
     players_kart_name = players_kart.name
@@ -74,6 +74,9 @@ def set_starting_line(players_driver, players_kart):
             if j == "Standard":
                 starting_order[3] = players[i][j]
     print(print_player_ranks(starting_order))
+    for i in range(0,3):
+        if starting_order[i] == players_driver_name:
+            player1.rank = i + 1
 
     #prints the players dictionary nicely 
     def print_nested(val, nesting = -5): 

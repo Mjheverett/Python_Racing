@@ -126,13 +126,15 @@ def go_around_track(player1):
         player1.rank += 1
     elif player_rank_change == 2 and player1.rank <=2:
         player1.rank += 2
+    elif player_rank_change ==2 and player1.rank ==3:
+        player1.rank += 1
     elif player_rank_change == -1 and player1.rank >= 2:
         player1.rank -= 1
     elif player_rank_change == -1 and player1.rank == 1:
-        player1.rank = 1
+        player1.rank == 1
     else:
         pass
-    print("You are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
+    print("\nYou are now in rank %d! Keep the pedal to the metal!\n" % player1.rank)
     return player1
 
 # def game():

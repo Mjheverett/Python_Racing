@@ -153,8 +153,29 @@ def game(players_driver, players_kart, player1):
         else:
             pass
 
+    print("""\nFINISH!!
+                          .oo`             :y/`                            
+                   ```.:+syyy+            .yyyyo/-.``                      
+       ``.--:///////::+yyyyyyy:          `syyyyyyy:::////+/::-..``         
+   `.://:syyyyys.     `syyyyyyy.         +yyyyyyy/      /yyyyyy+://-.`     
+  :+:.   :yyyyyyo`     -yso/-.ss`       :y/.:+syo`     -yyyyyys`  `./o`    
+  -o`     +ysssoo::://+o+`    -y+      .yo`   `-s++/::-+ossssy.     :o`    
+   /+ `.:+s:``   `oyyyyyy:     +h:    `oy.    `oyyyyyy-    `.+o/-` .s.     
+   `o+oyyyys`     .syyyyys.`.-+syy.   /yyo/-``/yyyyyy+      :yyyys+o:      
+    .syyyyyy+```..-+o+//:--oyyyyyyo` -yyyyyyy/-:://+o:...``.syyyyyy/       
+     -yyyso/-/ssyyyy/      /yyyyyyy/.syyyyyys.     `syyyyso-:/oyyyo`       
+      /s-`   `syyyyyy-     `oyyso:+ysy:+oyyy:`     +yyyyyy/   `./y.        
+      `o:     -yyyyyyo::://::-.`  `sy/  ``-::://::/syyyyyo`     o:         
+       .s.`-:///:-..`````         -yyo`         ````..--://::. /+          
+        -+/-``                   `ss:y/                    `.:+o`          
+         `                       oy. +y-                                   
+                                /y:  `ss.                                  
+                               -y+    .yo`                                 
+                              `ss`     :y/                                 
+                              `:.       --                                 
+                                                                         
+\n""")
 
-    print("\nFINISH!!\n")
     if player1.rank == 1:
         print("Congrats! You WON!!")
     elif player1.rank == 2:
@@ -173,4 +194,9 @@ def game(players_driver, players_kart, player1):
     else:
         print("That was not a valid choice. Try again. ")
 
+
 game_startmenu()
+
+
+
+

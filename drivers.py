@@ -13,9 +13,7 @@ class Driver:
         %s:
         Speed: %.1f
         Knowledge: %.1f
-        Alertness: %.1f
-        Mechanical: %.1f
-        """ % (self.name.upper(), self.speed, self.knowledge, self.alertness, self.mechanical_skills)
+        """ % (self.name.upper(), self.speed, self.knowledge)
 
 #Driver subclasses
 class Driver_1(Driver):

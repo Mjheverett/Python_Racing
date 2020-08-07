@@ -1,12 +1,26 @@
-from drivers import Driver_1, Driver_2, Driver_3, Driver_4
-from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart, Kart
-from tracks import Track_1, Track_2, Track_3, Track_4, Tracks
-from game import players_driver_name, players_kart_name, players, players_track
+# from drivers import Driver_1, Driver_2, Driver_3, Driver_4
+# from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart, Kart
+# from tracks import Track_1, Track_2, Track_3, Track_4, Tracks
+# from game import players_driver_name, players_kart_name, players, players_track
 
 
 ##Track 1##---------------------------------------------------------------
 
 import random
+
+def change_ranks(player_rank_change, player1):
+    if player_rank_change == 1 and player1.rank <= 3:
+        player1.rank += 1
+    elif player_rank_change == 2 and player1.rank <=2:
+        player1.rank += 2
+    elif player_rank_change == -1 and player1.rank >= 2:
+        player1.rank -= 1
+    elif player_rank_change == -1 and player1.rank == 1:
+        player1.rank = 1
+    else:
+        pass
+    print("You are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
+
 #the following dictionaries are for each outcome
 catastrophic = {
     1: "During your pass attempt, your back tire blows out, causing you to have to pit for repairs. You lose two spots.",
@@ -17,8 +31,8 @@ catastrophic = {
 }
 
 bad = {
-    6: "You try to pass but there is debris from another car that you have to avoid. You hit it causing your car to spin out. You drop back one spot",
-    7: "You attempt to pass the kart in front of you. As you make your move, the kart behind you makes his move. You swerve out of the way in the nick of time. Unfortunately, you also lost your spot",
+    6: "You try to pass but there is debris from another car that you have to avoid. You hit it causing your car to spin out. You drop back one spot.",
+    7: "You attempt to pass the kart in front of you. As you make your move, the kart behind you makes his move. You swerve out of the way in the nick of time. Unfortunately, you also lost your spot.",
     8: "You hit a wet patch on the track and almost lose control of the car. The driver behind you sees their opportunity and passes you. ",
     9: "Over your radio you hear 'Doh'...Homer forgot to fill the gas tank on the last pit. You have to go easy on the gas and lose one spot.",
     10: "Peter and the Giant Chicken start fighting on the track! You have to swerve to avoid wrecking your car in the carnage. You get passed and lose one spot.",
@@ -33,14 +47,14 @@ neutral = {
 }
 
 good = {
-    16: "In a daring test of your driving ability, you move to pass. The driver in front of you picks a bad line, and you slide past to gain one spot",
+    16: "In a daring test of your driving ability, you move to pass. The driver in front of you picks a bad line, and you slide past to gain one spot.",
     17: "You pull alongside the kart next to you and wink at your opponent. He is so distracted by your dashing good looks and charm that you can pass him easily.",
     18: "You rub the genie lamp you've been saving for this occasion. He grants you one wish, and you wish to advance a place. That's it? Out of anything in the world? Uh, okay. You move up a spot.",
-    19: "Thanos snapped his fingers and the driver infront of you fades into dust. You shed a single, glistening tear and gain one spot.",
+    19: "Thanos snapped his fingers and the driver in front of you fades into dust. You shed a single, glistening tear and gain one spot.",
     20: "A giant eagle mistakes you for a hobbit and picks up your kart! Luckily, he realizes his mistake and drops you back onto the track a spot ahead of where you were. Sweet!",
 }
 catastrophic_first = {
-    1: "During your time in first, your back tire blows out...causing you to have to pit for repairs. You lose two spots. Bummer!",
+    1: "During your time in first, your back tire blows out... causing you to have to pit for repairs. You lose two spots. Bummer!",
     2: "You speed forward to keep your spot in first, but sudenly Beans jumps on to the track. She isn't in your way, but she's so cute that you stop to pet her. You've lost two spots by the time you get back into your kart.",
     3: "A blue shell hits your kart, sending you into the sky. This isn't even Mario Kart! Where did that come from?! You lose two spots.",
     4: "Odin lopes onto the course and wags his tail in your direction. You have to stop and tell him that he's a good boy. He must know. Lose two spots.",
@@ -63,44 +77,65 @@ neutral_first = {
     15: "Your stomach grumbles. You've forgotten to eat lunch! You must have been coding so much that you skipped it! Sean warned you about this! Thankfully, you packed enough fruit by the foot in your fanny pack to stave off the hunger. You maintain your place in first.",
 }
 # these are the functions for each outcome
-def good_outcomes(dict):
-    print(dict(x))
-    player_rank_change = -1
-    return player_rank_change 
-def bad_outcomes(dict):
-    print(dict(x))
-    player_rank_change = 1
-    return player_rank_change
-def neutral_outcomes(dict):
-    print(dict(x))
-    player_rank_change = 0
-    return player_rank_change
-def catastrophic_outcomes(dict):
-    print(dict(x))
-    player_rank_change = 2
-    return player_rank_change
+def good_outcomes(dict, x):
+    print(dict[x])
+    rank_change = -1
+    return rank_change 
+def bad_outcomes(dict, x):
+    print(dict[x])
+    rank_change = 1
+    return rank_change
+def neutral_outcomes(dict, x):
+    print(dict[x])
+    rank_change = 0
+    return rank_change
+def catastrophic_outcomes(dict, x):
+    print(dict[x])
+    rank_change = 2
+    return rank_change
 #this is the main function for each lap
-def go_around_track():   
-    if Player.rank == 1:
-        x = probability_first
+def go_around_track(player1):   
+    if player1.rank == 1:
         probability_first = random.randint(1,15)
-        while probability_first <= 1 and probability_first >= 5:
-            catastrophic_outcomes(catastrophic_first)
-        while probability_first <= 6 and probability_first >= 10:
-            bad_outcomes(bad_first)
-        while probability_first <= 11 and probability_first >=15:
-            neutral_outcomes(neutral_first)
+        x = probability_first
+        if probability_first >= 1 and probability_first <= 5:
+            print("Oh no! It's a catastrophe!")
+            player_rank_change = catastrophic_outcomes(catastrophic_first, x)
+        elif probability_first >= 6 and probability_first <= 10:
+            print("Oh, no! It's not good news!")
+            player_rank_change = bad_outcomes(bad_first, x)
+        elif probability_first >= 11 and probability_first <=15:
+            print("Meh. It's pretty neutral.")
+            player_rank_change = neutral_outcomes(neutral_first, x)
     else:
-        x = probability
         probability = random.randint(1,20)
-        while probability <= 1 and probability >= 5:
-            catastrophic_outcomes(catastrophic)
-        while probability <= 6 and probability >= 10:
-            bad_outcomes(bad)
-        while probability <= 11 and probability >= 15:
-            good_outcomes(good)
+        x = probability
+        if probability >= 1 and probability <= 5:
+            print("Oh no! It's a catastrophe!")
+            player_rank_change = catastrophic_outcomes(catastrophic, x)
+        elif probability >= 6 and probability <= 10:
+            print("Oh, no! It's not good news!")
+            player_rank_change = bad_outcomes(bad, x)
+        elif probability >= 11 and probability <= 15:
+            print("Meh. It's pretty neutral.")
+            player_rank_change = neutral_outcomes(neutral, x)
+        elif probability >= 16 and probability <= 20:
+            print("Hey! Something went right!")
+            player_rank_change = good_outcomes(good, x)
+    if player_rank_change == 1 and player1.rank <= 3:
+        player1.rank += 1
+    elif player_rank_change == 2 and player1.rank <=2:
+        player1.rank += 2
+    elif player_rank_change == -1 and player1.rank >= 2:
+        player1.rank -= 1
+    elif player_rank_change == -1 and player1.rank == 1:
+        player1.rank = 1
+    else:
+        pass
+    print("You are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
+    return player1
 
-def game():
+# def game():
     while True:
         pass
 
@@ -1496,26 +1531,26 @@ def game():
 #     #run computers through the event
 # def track_4_straight_computer():
     #decide whether they are aggressive (1) or passive (2)
-    agg_pass = randint.range(1,3)
-    if agg_pass == 1:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp1_kart_straight + comp1_all + track_1_speed_bonus
-    if agg_pass == 2:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp1_kart_straight + comp1_all + track_1_speed_bonus
-    return change_in_places_comp1
-    agg_pass = randint.range(1,3)
-    if agg_pass == 1:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp2_kart_straight + comp2_all + track_1_speed_bonus
-    if agg_pass == 2:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp2_kart_straight + comp2_all + track_1_speed_bonus
-    return change_in_places_comp2
-    if agg_pass == 1:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp3_kart_straight + comp3_all + track_1_speed_bonus
-    if agg_pass == 2:
-        base_probability = randint.range(1, 20)
-        probability = base_probability + comp3_kart_straight + comp3_all + track_1_speed_bonus
-    return change_in_places_comp3
+    # agg_pass = randint.range(1,3)
+    # if agg_pass == 1:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp1_kart_straight + comp1_all + track_1_speed_bonus
+    # if agg_pass == 2:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp1_kart_straight + comp1_all + track_1_speed_bonus
+    # return change_in_places_comp1
+    # agg_pass = randint.range(1,3)
+    # if agg_pass == 1:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp2_kart_straight + comp2_all + track_1_speed_bonus
+    # if agg_pass == 2:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp2_kart_straight + comp2_all + track_1_speed_bonus
+    # return change_in_places_comp2
+    # if agg_pass == 1:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp3_kart_straight + comp3_all + track_1_speed_bonus
+    # if agg_pass == 2:
+    #     base_probability = randint.range(1, 20)
+    #     probability = base_probability + comp3_kart_straight + comp3_all + track_1_speed_bonus
+    # return change_in_places_comp3

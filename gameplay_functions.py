@@ -1,11 +1,11 @@
-import track_events
-from players import Players
+from track_events import catastrophic, bad, neutral, good, catastrophic_first, bad_first, neutral_first, good_outcomes, bad_outcomes, neutral_outcomes, catastrophic_outcomes, go_around_track
+import random
 
-player1 = Players(1)
-Computer1 = Players(2)
-Computer2 = Players(3)
-Computer3 = Players(4)
-Computers = [Computer1, Computer2, Computer1]
+# player1 = Players(1)
+# Computer1 = Players(2)
+# Computer2 = Players(3)
+# Computer3 = Players(4)
+# Computers = [Computer1, Computer2, Computer1]
 
 def print_menu_error():
     print("That was not a valid choice. Try again.\n\n\n")
@@ -20,7 +20,7 @@ def print_player_ranks(choice_list):
         num += 1
     return choice_string
 
-def set_starting_line(players_driver, players_kart, Player1, Comp):
+def set_starting_line(players_driver, players_kart):
     #assign attributes to variables so the rest of this runs 
     players_driver_name = players_driver.name
     players_kart_name = players_kart.name
@@ -74,11 +74,6 @@ def set_starting_line(players_driver, players_kart, Player1, Comp):
             if j == "Standard":
                 starting_order[3] = players[i][j]
     print(print_player_ranks(starting_order))
-    for i in (len(starting_order)):
-        if starting_order[i] == players_driver_name:
-            Player1.rank = i + 1
-    finish_order = starting_order
-    return finish_order
 
     #prints the players dictionary nicely 
     def print_nested(val, nesting = -5): 
@@ -91,31 +86,43 @@ def set_starting_line(players_driver, players_kart, Player1, Comp):
                 print_nested(val[k],nesting) 
         else: 
             print(val) 
-    return players, Player1, Computers
+    return players
 
-def change_ranks(player1, player_rank_change):
-    if player_rank_change == 1 and player1.rank <= 3:
-        player1.rank += 1
-    elif player_rank_change == 2 and player1.rank <=2:
-        player1.rank += 2
-    elif player_rank_change == -1 and player1.rank >= 2:
-        player1.rank -= 1
-    elif player_rank_change == -1 and player1.rank == 1:
-        player1.rank = 1
-    else:
-        pass
-    return player1.rank
+def set_finish_order():
+    pass
 
-def lap_events(laps, lap_count, finish_order): # add back players to pass in
-    if laps == lap_count:
-            print("Final Lap!!!")
-    else:
-        print("Lap %d!!" % laps)
-        go_around_track()
-        change_ranks(player1, player_rank_change)
+# def change_ranks(player_rank_change, player1):
+#     if player_rank_change == 1 and player1.rank <= 3:
+#         player1.rank += 1
+#     elif player_rank_change == 2 and player1.rank <=2:
+#         player1.rank += 2
+#     elif player_rank_change == -1 and player1.rank >= 2:
+#         player1.rank -= 1
+#     elif player_rank_change == -1 and player1.rank == 1:
+#         player1.rank = 1
+#     else:
+#         pass
+#     return player1.rank
+#     print("You are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
 
-def finish_line(finish_order, players_driver_name):
-    print("\nFINISH!!\n")
-    print(finish_order)
-    if finish_order[0] == players_driver_name:
-        print("Congrats! You WON!!")
+# def lap_events(laps, lap_count, player1): # add back players to pass in
+#     if laps == lap_count:
+#         print("Final Lap!!!")
+#         go_around_track(player1)
+#     else:
+#         print("Lap %d!!" % laps)
+#         go_around_track(player1)
+        
+
+# def finish_line():
+#     print("\nFINISH!!\n")
+#     print(finish_order)
+#     if player1.rank == 1:
+#         print("Congrats! You WON!!")
+#     elif player1.rank == 2:
+#         print("Second: Not great, not horrible")
+#     elif player1.rank == 3:
+#         print("Third: try harder")
+#     elif player1.rank == 4:
+#         print("Fourth ... oof.")
+#     set_finish_order()

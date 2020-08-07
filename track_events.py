@@ -24,7 +24,7 @@ def change_ranks(player_rank_change, player1):
 #the following dictionaries are for each outcome
 catastrophic = {
     1: "During your pass attempt, your back tire blows out, causing you to have to pit for repairs. You lose two spots.",
-    2: "You move to pass the kart in front of you, but sudenly Guster jumps on to the track. You swerve to miss the cat, saving his life but causing you to lose two spots.",
+    2: "You move to pass the kart in front of you, but suddenly Guster jumps on to the track. You swerve to miss the cat, saving his life but causing you to lose two spots.",
     3: "Fario runs out from the pits and throws a turtle shell onto the track. You hit it and lose two spots.",
     4: "The Godfather makes you an offer you can't refuse. You refused...so he went to the mattresses. You lose two spots.",
     5: "Corbin Dallas asked for your multi-pass. You 'dropped' it and got held up in the pits. Lose two spots.", 
@@ -55,7 +55,7 @@ good = {
 }
 catastrophic_first = {
     1: "During your time in first, your back tire blows out... causing you to have to pit for repairs. You lose two spots. Bummer!",
-    2: "You speed forward to keep your spot in first, but sudenly Beans jumps on to the track. She isn't in your way, but she's so cute that you stop to pet her. You've lost two spots by the time you get back into your kart.",
+    2: "You speed forward to keep your spot in first, but suddenly Beans jumps on to the track. She isn't in your way, but she's so cute that you stop to pet her. You've lost two spots by the time you get back into your kart.",
     3: "A blue shell hits your kart, sending you into the sky. This isn't even Mario Kart! Where did that come from?! You lose two spots.",
     4: "Odin lopes onto the course and wags his tail in your direction. You have to stop and tell him that he's a good boy. He must know. Lose two spots.",
     5: "Off in the distance you hear a familiar melody. You cock your head to listen... It's the ice cream truck! You speed off the track and grab one of those weird popsicles that look like Spongebob. It's delicious, but you lose two spots by the time you make it back.", 

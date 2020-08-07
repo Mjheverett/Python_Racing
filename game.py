@@ -3,10 +3,10 @@
 from drivers import Driver_1, Driver_2, Driver_3, Driver_4
 from karts import Standard_kart, Mushmellow_kart, Powerflower_kart, Drybomber_kart, Kart
 from tracks import Track_1, Track_2, Track_3, Track_4, Tracks
-import gameplay_functions
-import players
-import track_events
-import attributes
+from players import Players
+from gameplay_functions import print_player_ranks, set_starting_line, set_finish_order
+from track_events import change_ranks, catastrophic, bad, neutral, good, catastrophic_first, bad_first, neutral_first, good_outcomes, bad_outcomes, neutral_outcomes, catastrophic_outcomes, go_around_track
+import random
 
 print("""
 Welcome to Definitely NOT Mario Kart
@@ -20,6 +20,12 @@ Welcome to Definitely NOT Mario Kart
 A text-based racing game.
 
 Choose your driver and get racing!""")
+
+player1 = Players(1)
+Computer1 = Players(2)
+Computer2 = Players(3)
+Computer3 = Players(4)
+Computers = [Computer1, Computer2, Computer1]
 
 game_menu = """
     1: Pick a Driver
@@ -101,9 +107,9 @@ def game_startmenu():
         if menu_choice == 3:
             print(players_driver.stats())
             print(players_kart.stats())
-            print(players_track.stats())
+            # print(players_track.stats())
         if menu_choice == 4:
-            game(players_driver, players_kart)
+            game(players_driver, players_kart, player1)
         if menu_choice == 5:
             exit_prompt = input("Are you sure you want to quit? All game data will be lost. (Y or N): ").upper()
             if exit_prompt == "Y":
@@ -118,15 +124,79 @@ def game_startmenu():
 
 # create functions for each track to order events
 # laps(tracks(track_events))
-def game(players_driver, players_kart):
+def game(players_driver, players_kart, player1):
     print("""
     Welcome to Suzuka!! 
     """)
-    set_starting_line(players_driver, players_kart)
-    lap_count = input("How many laps would you like to race? \n")
-    for laps in range(1, lap_count):
-        lap_events(laps, lap_count, finish_order)
+    set_starting_line(players_driver, players_kart, player1)
+    # set lap count based on user input
+    lap_count = int(input("How many laps would you like to race? \n"))
+    if lap_count == 0:
+        print("That's no fun! Please enter a number over 1 and under 100.")
+    elif lap_count >= 100:
+        print("Whoa, that's a little far! Let's take it easy at first. Please enter a number between 1 and 100.")
+    else:
+        pass
+    # loop game for length of lap count
+    laps = 1
+    while laps != (lap_count + 1):
+        if laps == lap_count:
+            input("Ready for the next lap? <Enter to continue>\n")
+            print("Final Lap!!!\n")
+            go_around_track(player1)
+            laps += 1
+        elif laps < lap_count:
+            input("Ready for the lap? <Enter to continue>\n")
+            print("Lap %d!!\n" % laps)
+            go_around_track(player1)
+            laps += 1
+        else:
+            pass
 
-    finish_line(finish_order, players_driver_name)
+    print("""\nFINISH!!
+                          .oo`             :y/`                            
+                   ```.:+syyy+            .yyyyo/-.``                      
+       ``.--:///////::+yyyyyyy:          `syyyyyyy:::////+/::-..``         
+   `.://:syyyyys.     `syyyyyyy.         +yyyyyyy/      /yyyyyy+://-.`     
+  :+:.   :yyyyyyo`     -yso/-.ss`       :y/.:+syo`     -yyyyyys`  `./o`    
+  -o`     +ysssoo::://+o+`    -y+      .yo`   `-s++/::-+ossssy.     :o`    
+   /+ `.:+s:``   `oyyyyyy:     +h:    `oy.    `oyyyyyy-    `.+o/-` .s.     
+   `o+oyyyys`     .syyyyys.`.-+syy.   /yyo/-``/yyyyyy+      :yyyys+o:      
+    .syyyyyy+```..-+o+//:--oyyyyyyo` -yyyyyyy/-:://+o:...``.syyyyyy/       
+     -yyyso/-/ssyyyy/      /yyyyyyy/.syyyyyys.     `syyyyso-:/oyyyo`       
+      /s-`   `syyyyyy-     `oyyso:+ysy:+oyyy:`     +yyyyyy/   `./y.        
+      `o:     -yyyyyyo::://::-.`  `sy/  ``-::://::/syyyyyo`     o:         
+       .s.`-:///:-..`````         -yyo`         ````..--://::. /+          
+        -+/-``                   `ss:y/                    `.:+o`          
+         `                       oy. +y-                                   
+                                /y:  `ss.                                  
+                               -y+    .yo`                                 
+                              `ss`     :y/                                 
+                              `:.       --                                 
+                                                                         
+\n""")
+
+    if player1.rank == 1:
+        print("Congrats! You WON!!")
+    elif player1.rank == 2:
+        print("Second: Not great, not horrible.")
+    elif player1.rank == 3:
+        print("Third: try harder.")
+    elif player1.rank == 4:
+        print("Fourth ... oof.")
+    set_finish_order()
+
+    play_again = input("Would you like to play again? (Y or N) ").upper()
+    if play_again == "Y":
+        pass
+    elif play_again == "N":
+        quit()
+    else:
+        print("That was not a valid choice. Try again. ")
+
 
 game_startmenu()
+
+
+
+

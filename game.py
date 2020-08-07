@@ -145,6 +145,7 @@ def game(players_driver, players_kart, player1):
             print("Final Lap!!!\n")
             go_around_track(player1)
             laps += 1
+            input("Ready to see your final results? <Enter to continue>")
         elif laps < lap_count:
             input("Ready for the lap? <Enter to continue>\n")
             print("Lap %d!!\n" % laps)

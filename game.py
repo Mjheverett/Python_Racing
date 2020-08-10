@@ -22,10 +22,6 @@ A text-based racing game.
 Choose your driver and get racing!""")
 
 player1 = Players(1)
-Computer1 = Players(2)
-Computer2 = Players(3)
-Computer3 = Players(4)
-Computers = [Computer1, Computer2, Computer1]
 
 game_menu = """
     1: Pick a Driver
@@ -153,7 +149,6 @@ def game(players_driver, players_kart, player1):
             laps += 1
         else:
             pass
-
     print("""\nFINISH!!
                           .oo`             :y/`                            
                    ```.:+syyy+            .yyyyo/-.``                      
@@ -173,10 +168,8 @@ def game(players_driver, players_kart, player1):
                                 /y:  `ss.                                  
                                -y+    .yo`                                 
                               `ss`     :y/                                 
-                              `:.       --                                 
-                                                                         
+                              `:.       --                                                                                                         
 \n""")
-
     if player1.rank == 1:
         print("Congrats! You WON!!")
     elif player1.rank == 2:
@@ -195,9 +188,4 @@ def game(players_driver, players_kart, player1):
     else:
         print("That was not a valid choice. Try again. ")
 
-
 game_startmenu()
-
-
-
-

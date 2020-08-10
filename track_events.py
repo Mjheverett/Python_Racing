@@ -53,6 +53,7 @@ good = {
     19: "Thanos snapped his fingers and the driver in front of you fades into dust. You shed a single, glistening tear and gain one spot.",
     20: "A giant eagle mistakes you for a hobbit and picks up your kart! Luckily, he realizes his mistake and drops you back onto the track a spot ahead of where you were. Sweet!",
 }
+
 catastrophic_first = {
     1: "During your time in first, your back tire blows out ... causing you to have to pit for repairs. You lose two spots. Bummer!",
     2: "You speed forward to keep your spot in first, but sudenly Beans the cat jumps on to the track. She isn't in your way, but she's so cute that you stop to pet her. You've lost two spots by the time you get back into your kart.",

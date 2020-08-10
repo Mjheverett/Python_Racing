@@ -152,7 +152,6 @@ def game(players_driver, players_kart, player1):
             laps += 1
         else:
             pass
-
     print("""\nFINISH!!
                           .oo`             :y/`                            
                    ```.:+syyy+            .yyyyo/-.``                      
@@ -172,10 +171,8 @@ def game(players_driver, players_kart, player1):
                                 /y:  `ss.                                  
                                -y+    .yo`                                 
                               `ss`     :y/                                 
-                              `:.       --                                 
-                                                                         
+                              `:.       --                                                                                                         
 \n""")
-
     if player1.rank == 1:
         print("Congrats! You WON!!")
     elif player1.rank == 2:

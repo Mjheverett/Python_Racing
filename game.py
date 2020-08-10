@@ -22,10 +22,6 @@ A text-based racing game.
 Choose your driver and get racing!""")
 
 player1 = Players(1)
-Computer1 = Players(2)
-Computer2 = Players(3)
-Computer3 = Players(4)
-Computers = [Computer1, Computer2, Computer1]
 
 game_menu = """
     1: Pick a Driver
@@ -191,9 +187,4 @@ def game(players_driver, players_kart, player1):
     else:
         print("That was not a valid choice. Try again. ")
 
-
 game_startmenu()
-
-
-
-

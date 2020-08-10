@@ -19,7 +19,7 @@ def change_ranks(player_rank_change, player1):
         player1.rank = 1
     else:
         pass
-    print("You are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
+    print("\nYou are now in rank: %d! Keep the pedal to the metal!" % player1.rank)
 
 #the following dictionaries are for each outcome
 catastrophic = {
@@ -99,28 +99,28 @@ def go_around_track(player1):
         probability_first = random.randint(1,15)
         x = probability_first
         if probability_first >= 1 and probability_first <= 5:
-            print("Oh no! It's a catastrophe!")
+            print("Oh no! It's a catastrophe!\n")
             player_rank_change = catastrophic_outcomes(catastrophic_first, x)
         elif probability_first >= 6 and probability_first <= 10:
-            print("Oh, no! It's not good news!")
+            print("Oh, no! It's not good news!\n")
             player_rank_change = bad_outcomes(bad_first, x)
         elif probability_first >= 11 and probability_first <=15:
-            print("Meh. It's pretty neutral.")
+            print("Meh. It's pretty neutral.\n")
             player_rank_change = neutral_outcomes(neutral_first, x)
     else:
         probability = random.randint(1,20)
         x = probability
         if probability >= 1 and probability <= 5:
-            print("Oh no! It's a catastrophe!")
+            print("Oh no! It's a catastrophe!\n")
             player_rank_change = catastrophic_outcomes(catastrophic, x)
         elif probability >= 6 and probability <= 10:
-            print("Oh, no! It's not good news!")
+            print("Oh, no! It's not good news!\n")
             player_rank_change = bad_outcomes(bad, x)
         elif probability >= 11 and probability <= 15:
-            print("Meh. It's pretty neutral.")
+            print("Meh. It's pretty neutral.\n")
             player_rank_change = neutral_outcomes(neutral, x)
         elif probability >= 16 and probability <= 20:
-            print("Hey! Something went right!")
+            print("Hey! Something went right!\n")
             player_rank_change = good_outcomes(good, x)
     if player_rank_change == 1 and player1.rank <= 3:
         player1.rank += 1

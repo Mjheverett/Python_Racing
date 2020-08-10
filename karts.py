@@ -13,7 +13,7 @@ class Kart:
         Handling: %.1f
         Drift: %.1f
         Acceleration: %.1f
-        """ % (self.name, self.speed, self.handling, self.drift, self.acceleration)
+        """ % (self.name.upper(), self.speed, self.handling, self.drift, self.acceleration)
 # speed is the maximum speed a given kart can go
 # handling is the capacity of the kart to make small turns
     #the use of handling causes a speed loss, but this is lessened by a high handling score
